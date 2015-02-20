@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Zhike Chan "zk.chan007@gmail.com"
 ENV REFRESHED_AT 2015-2-20
-RUN apt-get install -qq update
+RUN apt-get -qq update
 
 # Install ekho.
 RUN \
@@ -15,7 +15,7 @@ RUN apt-get install libav-tools
 
 # Install Python.
 RUN \
-  apt-get update && \
+  apt-get -qq update && \
   apt-get install -y python python-dev python-pip python-virtualenv && \
   rm -rf /var/lib/apt/lists/*
 
