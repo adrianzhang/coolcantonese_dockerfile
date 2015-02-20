@@ -11,7 +11,7 @@ RUN \
   apt-get -qqy install ekho
 
 # Install libav.
-RUN apt-get install libav-tools
+RUN apt-get -qqy install libav-tools
 
 # Install Python.
 RUN \
