@@ -7,7 +7,7 @@ RUN apt-get install -qq update
 RUN \
   apt-get -qqy install software-properties-common && \
   add-apt-repository ppa:hgneng/ekho && \
-  apt-get -qqupdate && \
+  apt-get -qq update && \
   apt-get -qqy install ekho
 
 # Install libav.
