@@ -3,7 +3,7 @@ MAINTAINER Zhike Chan "zk.chan007@gmail.com"
 ENV REFRESHED_AT 2015-2-20
 
 ## use mirror source
-RUN sed 's/archive\.ubuntu\.com/mirrors\.zju\.edu\.cn/' -i /etc/apt/sources.list
+# RUN sed 's/archive\.ubuntu\.com/mirrors\.zju\.edu\.cn/' -i /etc/apt/sources.list
 
 RUN apt-get -qq update
 
@@ -38,5 +38,5 @@ RUN pip install -r requirements.txt && rm -rf requirements.txt
 VOLUME ["/Cantonese","/Cantonese_audio"]
 WORKDIR /Cantonese
 
-#ENTRYPOINT ["wechat.py"]
-#CMD ["-h"]
+# ENTRYPOINT ["wechat.py"]
+# CMD ["-h"]
