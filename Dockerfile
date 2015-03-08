@@ -23,5 +23,5 @@ RUN pip install -r requirements.txt && rm -rf requirements.txt
 VOLUME ["/Cantonese","/Cantonese_audio"]
 WORKDIR /Cantonese
 
-# ENTRYPOINT ["wechat.py"]
-# CMD ["-h"]
+ENTRYPOINT []
+CMD []
