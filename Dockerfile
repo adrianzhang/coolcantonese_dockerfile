@@ -1,18 +1,18 @@
 FROM kk17/ekho
 MAINTAINER Zhike Chan "zk.chan007@gmail.com"
-ENV REFRESHED_AT 2015-3-7
+ENV REFRESHED_AT 2015-4-4
 
-## Install ffmpeg.
+## Install ffmpeg and python.
 RUN \
-  add-apt-repository ppa:jon-severinsson/ffmpeg && \
+  InstallDeps='software-properties-common' && \
+  set -x && \
+  apt-get update && \
+  apt-get install -y $InstallDeps && \
+  add-apt-repository ppa:mc3man/trusty-media  && \
   apt-get update && \
   apt-get -y install ffmpeg && \
-  rm -rf /var/lib/apt/lists/*
-
-## Install Python.
-RUN \
-  apt-get update && \
-  apt-get install -y python python-dev python-pip python-virtualenv && \
+  apt-get purge -y --auto-remove $InstallDeps && \
+  apt-get install -y python python-dev python-pip && \
   rm -rf /var/lib/apt/lists/*
 
 ## Install Python packages.
