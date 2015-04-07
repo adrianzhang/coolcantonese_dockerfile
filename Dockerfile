@@ -2,7 +2,7 @@ FROM kk17/ekho
 MAINTAINER Zhike Chan "zk.chan007@gmail.com"
 ENV REFRESHED_AT 2015-4-4
 
-## Install ffmpeg and python.
+## Install ffmpeg and python and python-lxml.
 RUN \
   InstallDeps='software-properties-common' && \
   set -x && \
@@ -12,7 +12,7 @@ RUN \
   apt-get update && \
   apt-get -y install ffmpeg && \
   apt-get purge -y --auto-remove $InstallDeps && \
-  apt-get install -y python python-dev python-pip && \
+  apt-get install -y python python-dev python-pip python-lxml && \
   rm -rf /var/lib/apt/lists/*
 
 ## Install Python packages.
