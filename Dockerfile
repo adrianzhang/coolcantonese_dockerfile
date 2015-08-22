@@ -22,6 +22,6 @@ RUN pip install -r requirements.txt && rm -rf requirements.txt
 
 VOLUME ["/Cantonese","/Cantonese_audio"]
 WORKDIR /Cantonese
-
+EXPOSE 80
 ENTRYPOINT []
-CMD []
+CMD [/usr/bin/sh]
